@@ -1,0 +1,4 @@
+<h1><%= @post.title %></h1>
+<p>Views: <%= @post.views %></p>
+<p><%= auto_link(simple_format(@post.content)) %></p>
+<%= link_to 'Back to Home', root_path %>

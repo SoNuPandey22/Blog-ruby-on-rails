@@ -1,0 +1,13 @@
+<h1>New Post</h1>
+<ul>
+  <% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<%= form_for @post, url: create_post_path do |f| %>
+  <%= f.text_field :title %>
+  <br/>
+  <%= f.text_area :content %>
+  <br/>
+  <%= f.submit %>
+<% end %>

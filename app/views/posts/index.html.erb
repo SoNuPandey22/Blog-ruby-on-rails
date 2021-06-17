@@ -1,0 +1,20 @@
+<header><p>Bloging is Fun</p></header>
+<nav><%= link_to 'New Post', new_post_path %></nav>
+<br/>
+<% if @posts.count > 0 %>
+   <% @posts.each do |post| %>
+     <div class='post'>
+	    <h2 class='title'><%= link_to post.title, show_post_path(id: post.id) %></h2>
+	    <h4 class='content'><%= truncate post.content, length: 100 %></h4>
+	 <div>
+ 	<div class ="links">
+	    <%= link_to 'Edit Post', edit_post_path(id: post.id) %>
+	    <%= link_to 'Delete Post', destroy_post_path(id: post.id), method: :delete %>
+   </div>
+
+   <% end %>
+<% else %>
+    <h2>This is looks easy on rails....</h2>
+<% end %>
+
+	
